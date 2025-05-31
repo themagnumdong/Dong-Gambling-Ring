@@ -9,25 +9,8 @@ const formData = {
   bet3: this.bet3.value,
   bet4: this.bet4.value,
   bet5: this.bet5.value,
-  trollQuestion: this.trollQuestion.value // ✅ must match Apps Script
+  trollQuestion: this.trollQuestion.value // 
 };
-
-
-  fetch("https://script.google.com/macros/s/AKfycbwszW2DVPrBqw-BXXaaHpfr-vapctavn2_iL-1iAc5D1kFvHmiZamer86gH5uiQ0rFCVA/exec", {
-    method: "POST",
-    body: JSON.stringify(formData),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("confirmation").style.display = "block";
-    document.getElementById("betsForm").reset();
-  })
-  .catch(error => {
-    alert("Submission failed. Try again later.");
-    console.error("Error!", error.message);
-  });
-});
 
 // ---- Nav Tab Highlighting ----
 console.log("script.js loaded");
@@ -41,5 +24,53 @@ document.querySelectorAll(".nav-tab").forEach(link => {
 
   if (href === currentPage || (href === "index.html" && currentPage === "")) {
     link.classList.add("active");
+  }
+});
+document.getElementById("betsForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const res = await fetch('/api/save-vote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      document.getElementById("confirmation").style.display = "block";
+      e.target.reset();
+    } else {
+      alert("Error saving your bets. Please try again.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error. Please try again later.");
+  }
+});
+document.getElementById("betsForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const res = await fetch('/api/save-vote', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      document.getElementById("confirmation").style.display = "block";
+      e.target.reset();
+    } else {
+      alert("Error saving your bets. Please try again.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Server error. Please try again later.");
   }
 });
