@@ -118,3 +118,24 @@ nav, .lol-nav {
   padding: 20px 20px 40px;
   text-align: center;
 }
+.main-button {
+  display: inline-block;
+  background-color: #cc3333;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3em;
+  padding: 15px 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  border: 2px solid #bfa75c;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #000;
+  transition: all 0.2s ease-in-out;
+}
+
+.main-button:hover {
+  background-color: #ff4444;
+  color: #fff;
+  box-shadow: 0 0 20px #cc3333;
+  transform: scale(1.05);
+}
