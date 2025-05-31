@@ -10,13 +10,6 @@ body {
   padding: 0;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
-  background-color: rgba(30, 30, 30, 0.95);
-  border: none;
-}
 
 h1, h2, h3 {
   font-family: 'Cinzel', serif;
