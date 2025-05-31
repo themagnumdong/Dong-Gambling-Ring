@@ -1,4 +1,5 @@
-document.getElementById("betsForm").addEventListener("submit", function(event) {
+// ---- Bets Form Submission ----
+document.getElementById("betsForm")?.addEventListener("submit", function(event) {
   event.preventDefault();
 
   const formData = {
@@ -26,20 +27,18 @@ document.getElementById("betsForm").addEventListener("submit", function(event) {
     console.error("Error!", error.message);
   });
 });
-// Get current page (e.g. "index.html" or just "")
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-// Get the current file name (e.g., "voters.html")
-const currentPage = location.pathname.split("/").pop();
+// ---- Nav Tab Highlighting ----
+console.log("script.js loaded");
 
-console.log("Current page:", currentPage); // Debug line
+const currentPage = location.pathname.split("/").pop() || "index.html";
+console.log("Current page:", currentPage);
 
 document.querySelectorAll(".nav-tab").forEach(link => {
   const href = link.getAttribute("href");
-  console.log("Comparing with:", href); // Debug line
+  console.log("Comparing with:", href);
 
   if (href === currentPage || (href === "index.html" && currentPage === "")) {
     link.classList.add("active");
   }
 });
-
