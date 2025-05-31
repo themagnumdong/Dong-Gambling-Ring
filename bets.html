@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>This Week's Bets</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="bets.html">This Week's Bets</a></li>
+      <li><a href="voters.html">Who Voted</a></li>
+      <li><a href="results.html">Bet Results</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>This Week's Bets</h1>
+
+    <section class="bet-form">
+      <h2>Send your $5 wager and $1 tax to the Bank of Dong:<br> @Tyler-McHugh-1</h2>
+
+      <form id="betsForm">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <fieldset>
+          <legend>How many times will 1.0 watch a teammate die without helping?</legend>
+          <label><input type="radio" name="bet1" value="0"> That's never happened and never will - 0</label><br>
+          <label><input type="radio" name="bet1" value="1"> Maybe once</label><br>
+          <label><input type="radio" name="bet1" value="2-3"> 2–3 times</label><br>
+          <label><input type="radio" name="bet1" value="4+"> Just cum in the bush - 4+</label>
+        </fieldset><br>
+
+        <fieldset>
+          <legend>How many times will Choop finish top damage, call us all garbage, and we still lose?</legend>
+          <label><input type="radio" name="bet2" value="0"> We aren't garbage and never lose - 0</label><br>
+          <label><input type="radio" name="bet2" value="1"> Maybe once</label><br>
+          <label><input type="radio" name="bet2" value="2-3"> 2–3 times</label><br>
+          <label><input type="radio" name="bet2" value="4+"> Ok maybe we are garbage - 4+</label>
+        </fieldset><br>
+
+        <fieldset>
+          <legend>How many times will Dong have both top damage and most deaths in the same game?</legend>
+          <label><input type="radio" name="bet3" value="0"> The dong is actually micro - 0</label><br>
+          <label><input type="radio" name="bet3" value="1"> Maybe once</label><br>
+          <label><input type="radio" name="bet3" value="2-3"> 2–3 times</label><br>
+          <label><input type="radio" name="bet3" value="4+"> Magnum scaling - 4+</label>
+        </fieldset><br>
+
+        <fieldset>
+          <legend>How many times will Lesh win not on Diana, Sylas, or Susan?</legend>
+          <label><input type="radio" name="bet4" value="0"> He can only onetrick - 0</label><br>
+          <label><input type="radio" name="bet4" value="1"> Maybe once</label><br>
+          <label><input type="radio" name="bet4" value="2-3"> 2–3 times</label><br>
+          <label><input type="radio" name="bet4" value="4+"> Don't doubt his power - 4+</label>
+        </fieldset><br>
+
+        <fieldset>
+          <legend>How many times will Kramrod get lowest KDA and damage in a game?</legend>
+          <label><input type="radio" name="bet5" value="0"> AP Cho will finally work - 0</label><br>
+          <label><input type="radio" name="bet5" value="1"> Maybe once</label><br>
+          <label><input type="radio" name="bet5" value="2-3"> 2–3 times</label><br>
+          <label><input type="radio" name="bet5" value="4+"> EVERY F*CKING GAME - 4+</label>
+        </fieldset><br>
+
+        <fieldset>
+          <legend>What should the 2.0 baby be called?</legend>
+          <label><input type="radio" name="babyName" value="Nidalee"> Nidalee</label><br>
+          <label><input type="radio" name="babyName" value="Ahri 2.0"> Ahri 2.0</label><br>
+          <label><input type="radio" name="babyName" value="LeBlanc"> LeBlanc</label><br>
+          <label><input type="radio" name="babyName" value="Gragas"> Gragas</label><br>
+          <label><input type="radio" name="babyName" value="Teemo"> Teemo</label><br>
+          <label><input type="radio" name="babyName" value="3.0"> 3.0</label>
+        </fieldset><br>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="confirmation" style="display:none; font-weight:bold; color:green; text-align:center;">Your bets have been submitted!</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
