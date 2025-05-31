@@ -16,8 +16,6 @@ body {
   padding: 20px;
   background-color: rgba(30, 30, 30, 0.95);
   border: none;
-  box-shadow: 0 0 30px #111;
-  border-radius: 12px;
 }
 
 h1, h2, h3 {
