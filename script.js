@@ -29,10 +29,17 @@ document.getElementById("betsForm").addEventListener("submit", function(event) {
 // Get current page (e.g. "index.html" or just "")
 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-// Loop through all nav links
+// Get the current file name (e.g., "voters.html")
+const currentPage = location.pathname.split("/").pop();
+
+console.log("Current page:", currentPage); // Debug line
+
 document.querySelectorAll(".nav-tab").forEach(link => {
-  const linkPage = link.getAttribute("href");
-  if (linkPage === currentPage) {
+  const href = link.getAttribute("href");
+  console.log("Comparing with:", href); // Debug line
+
+  if (href === currentPage || (href === "index.html" && currentPage === "")) {
     link.classList.add("active");
   }
 });
+
