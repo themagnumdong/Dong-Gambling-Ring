@@ -13,7 +13,7 @@ const formData = {
 };
 
 
-  fetch("https://script.google.com/macros/s/AKfycbxmyAplhc_o2Em9lqvnMekcHg7NT1YYRuz4Cd8_3ClPToSVrjRh_HKte-7GuIqDcIAEbQ/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwszW2DVPrBqw-BXXaaHpfr-vapctavn2_iL-1iAc5D1kFvHmiZamer86gH5uiQ0rFCVA/exec", {
     method: "POST",
     body: JSON.stringify(formData),
     headers: { "Content-Type": "application/json" }
