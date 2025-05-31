@@ -1,24 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Who Voted</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>League Thursday Voters</title>
 </head>
-<body>
-  <nav class="lol-nav">
-    <a href="index.html" class="nav-tab">Home</a>
-    <a href="bets.html" class="nav-tab">This Week's Bets</a>
-    <a href="voters.html" class="nav-tab">Who Voted</a>
-    <a href="results.html" class="nav-tab">Bet Results</a>
-  </nav>
-
-  <div class="container">
-    <h1>Who Voted</h1>
-    <p>Coming soon: list of degenerates who submitted bets.</p>
+<body style="background-color: lightgray; font-family: monospace;">
+  <div style="text-align:center;">
+    <h1>Voter Submissions</h1>
+    <div id="voters-list">Loading...</div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    fetch('/voters.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("voters-list");
+        container.innerHTML = ''; // clear loading text
+
+        if (data.length === 0) {
+          container.innerText = 'No votes yet.';
+          return;
+        }
+
+        data.forEach(entry => {
+          const bets = Object.entries(entry)
+            .filter(([k]) => k !== "name")
+            .map(([k, v]) => `${k}: ${v}`)
+            .join(" | ");
+
+          const div = document.createElement("div");
+          div.innerHTML = `<b>${entry.name}</b> — ${bets}`;
+          container.appendChild(div);
+        });
+      })
+      .catch(() => {
+        document.getElementById("voters-list").innerText = "Error loading votes.";
+      });
+  </script>
 </body>
 </html>
