@@ -26,3 +26,13 @@ document.getElementById("betsForm").addEventListener("submit", function(event) {
     console.error("Error!", error.message);
   });
 });
+// Get current page (e.g. "index.html" or just "")
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+// Loop through all nav links
+document.querySelectorAll(".nav-tab").forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});
