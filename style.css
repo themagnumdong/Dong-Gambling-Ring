@@ -145,7 +145,12 @@ th {
   padding: 20px;
   text-align: center;
 }
-
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
 .nav-tab:hover {
   background-color: #2a2a2a;
   color: #fff;
